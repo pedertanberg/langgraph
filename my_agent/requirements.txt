@@ -1,10 +1,6 @@
 langgraph
 langchain_anthropic
-tavily-python
 langchain_community
 langchain_openai
-azure
-azure-search-documents
-azure.identity
 requests
-faker
+Faker

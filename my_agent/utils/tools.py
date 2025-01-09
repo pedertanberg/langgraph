@@ -1,6 +1,4 @@
-from langchain_community.tools.tavily_search import TavilySearchResults
-from langchain_community.vectorstores.azuresearch import AzureSearch
-from langchain_openai import AzureOpenAIEmbeddings, OpenAIEmbeddings
+from langchain_openai import OpenAIEmbeddings
 from dotenv import load_dotenv
 import os
 from langchain_core.tools import tool
@@ -18,12 +16,7 @@ embeddings: OpenAIEmbeddings = OpenAIEmbeddings(
 
 
 index_name: str = "elkjop-big-products-index"
-vector_store: AzureSearch = AzureSearch(
-    azure_search_endpoint="https://srch-sc-dev-westeu.search.windows.net",
-    azure_search_key=os.getenv('AZURE_SEARCH_KEY'),
-    index_name=index_name,
-    embedding_function=embeddings.embed_query,
-)
+
 
 @tool
 def search(query: str, items: int = 10, filter: str = None):
