@@ -35,7 +35,7 @@ def search(query: str, items: int = 10, filter: str = None):
     }
     data = {
         "vectorQueries": [{
-            "vector": embeddings.embed_query(query),g
+            "vector": embeddings.embed_query(query),
             "fields": "contentVector",
             "kind": "vector",
             "exhaustive": True,
